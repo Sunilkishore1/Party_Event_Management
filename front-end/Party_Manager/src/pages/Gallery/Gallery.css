@@ -1,0 +1,21 @@
+.gallery-head{
+    text-align: center;
+    margin-top: 100px;
+}
+.gallery-head h1{
+    color: rgb(223,51,17);
+    font-size: 3.1rem;
+}
+.gallery-head p{
+    color: rgb(34,19,51);
+    font-size: 1.3rem;
+}
+.gallery-img{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.gallery-pic img{
+    width: 500px;
+    height: auto;
+}

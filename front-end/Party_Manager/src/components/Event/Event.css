@@ -1,0 +1,41 @@
+.event-container{
+    padding-top: 20px;
+}
+.event-img img{
+    width: auto;
+    height:850px;
+}
+.event-container{
+    display: block;
+    text-align: center;
+}
+.event-header h2{
+    color: rgb(223,51,17);
+    margin-top: 5rem;
+    font-size: 2.1rem;
+}
+.event-header p{
+    color: white;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+.event-item{
+    margin-top: 20px;
+    margin-left:10% ;
+    width: 80%;
+    padding: 10px;
+    border: 1px solid white;
+}
+.event-item h2{
+    color: white;
+}
+.event-item button{
+    margin-top: 10px;
+    padding: 7px;
+    border-radius: 2cm;
+    background:rgb(223,51,17);
+    color: aliceblue;
+}
+.home-footer{
+    width: 100%;
+}

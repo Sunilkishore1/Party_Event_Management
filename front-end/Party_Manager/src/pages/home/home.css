@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Sixtyfour&family=Ysabeau+SC:wght@1000&display=swap');
+
+.img-wrap img{
+    width: 100%;
+    position:absolute;
+}
+*{
+    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Pacifico', cursive; */
+    /* font-family: 'Sixtyfour', sans-serif;
+    font-family: 'Ysabeau SC', sans-serif; */
+}
+.home-para{
+    position: relative;
+    text-align: center;
+}
+.home-para h1{
+    padding-top: 250px;
+    font-family: 'Sixtyfour', sans-serif;
+    color: aliceblue;
+    font-size: 8rem;
+}
+.home-para p{
+    font-size: 2rem;
+    padding-top: 10px;
+    color: aliceblue;
+    margin-bottom: 30px;
+}
+.outter-wrap{
+    margin-bottom: 300px;
+}
+#para-link{
+    background-color: rgb(223,51,17);
+    color:azure;
+    padding:1.2rem;
+    text-decoration: none;
+    border-radius: 2cm;
+
+}
+.para-link:hover{
+    border: 2px solid white;
+}
+.home-para a:hover{
+    border: 2px solid white;
+    transition: 0.2s all ease-in;
+}
+
+.home-event{
+    margin-top: 500px;
+}
+.home-events{
+    display: flex;
+}
+.events-events{
+    width: 60%;
+    height: 850px;
+    background-color: rgb(34,19,51);
+}
+.event-img{
+    width: 40%;
+}
