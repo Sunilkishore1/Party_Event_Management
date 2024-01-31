@@ -1,0 +1,53 @@
+.Book-form{
+    margin-top: 100px;
+    width: 80%;
+    height: 50rem;
+    margin-left: 10%;
+    background-color:rgb(140, 93, 193);
+}
+.Book-form h2{
+    text-align: center;
+    color: rgb(223,51,17);
+    font-size: 2.1rem;
+}
+.form-content label{
+    font-size: 1.5rem;
+    color: azure;
+    padding: 20px;
+    
+}
+.form-content input{
+    text-align: center;
+    border-radius: 2cm;
+    margin: 20px;
+    width: 20%;
+    height: 30px;
+}
+#ename{
+    width: 50%;
+    height: 30px;
+}
+.form-content{
+    display: block;
+}
+.form-date input{
+    width: 30%;
+    height: 30px;
+}
+.form-check input{
+    width: 5%;
+    height: 30px;
+}
+.form-btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.form-btn button{
+    font-size: 1.5rem;
+    padding: 17px;
+    background: rgb(223,51,17);
+    border: none;
+    color: white;
+    border-radius: 2cm;
+}

@@ -19,3 +19,11 @@
     width: 500px;
     height: auto;
 }
+.gallery-pic button{
+    border: none;
+    background:transparent;
+    transform: translateX(-480px);
+}
+.gallery-pic button:hover{
+    color: red;
+}

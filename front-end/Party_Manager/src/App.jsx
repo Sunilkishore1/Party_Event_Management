@@ -8,6 +8,7 @@ import Booked from './pages/Booked/Booked'
 // import SignInSide from './pages/Signup'
 import SignUp from './pages/Signup'
 import SignIn from './pages/SignIn'
+import Booking from './components/Booking/Booking'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path='/booked' element={<Booked/>}></Route>
         <Route path='/signup' element={<SignUp/>}></Route>
         <Route path='/signin' element={<SignIn/>}></Route>
+        <Route path='/booking' element={<Booking/>}></Route>
 
       </Routes>
     </BrowserRouter>

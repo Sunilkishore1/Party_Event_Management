@@ -1,6 +1,7 @@
 import React from 'react'
 import './Services.css'
 import Navbar from '../../components/Navbar/Navbar'
+import { Link } from 'react-router-dom'
 
 const Services = () => {
   return (
@@ -44,6 +45,10 @@ const Services = () => {
                 </div>
             </div>
         </div>
+            <Link to="/booking">
+
+            <button>Book Now</button>
+            </Link>
         </div>
   )
 }
