@@ -1,7 +1,10 @@
 import React from 'react'
 import './Event.css'
+import { useDispatch } from 'react-redux';
+import { cartProducts } from '../Redux/actions/action';
 
 const Event = () => {
+    const dispatch=useDispatch();
     const events=[
         {
             id:1,
@@ -33,7 +36,7 @@ const Event = () => {
                         <h2>{items.eName}</h2>
                         <p>{items.date}</p>
                         <h4>{items.location}</h4>
-                        <button>Book</button>
+                        <button onClick={()=>dispatch(cartProducts(items))}>Book</button>
                     </div>
                     )   
                 })}

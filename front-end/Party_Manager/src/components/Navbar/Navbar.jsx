@@ -10,7 +10,7 @@ function Navbar() {
     return ( 
         <>
             <nav className='navbar'>
-                <Link to="/" className='navbar-logo'>
+                <Link to="/bookings" className='navbar-logo'>
                     JUBLIX
                 </Link>
                 <ul className='nav-item'>

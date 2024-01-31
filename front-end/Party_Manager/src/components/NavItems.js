@@ -20,7 +20,7 @@ export const navItems=[
     {
         id:4,
         title:"VENUES",
-        path:"/venue",
+        path:"/booked",
         cName:"nav-item",
     },
 ]

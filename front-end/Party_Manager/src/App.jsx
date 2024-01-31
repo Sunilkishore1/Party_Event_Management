@@ -9,9 +9,15 @@ import Booked from './pages/Booked/Booked'
 import SignUp from './pages/Signup'
 import SignIn from './pages/SignIn'
 import Booking from './components/Booking/Booking'
+import { Provider } from 'react-redux'
+import {store} from './components/Redux/reducer/store'
+import Bookings from './user/Bookings'
+import Dashboard from './components/Admin/Dashboard'
+
 
 const App = () => {
   return (
+    <Provider store={store}>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
@@ -21,9 +27,12 @@ const App = () => {
         <Route path='/signup' element={<SignUp/>}></Route>
         <Route path='/signin' element={<SignIn/>}></Route>
         <Route path='/booking' element={<Booking/>}></Route>
+        <Route path='/bookings' element={<Bookings/>}></Route>
+        <Route path='/dashboard' element={<Dashboard/>}></Route>
 
       </Routes>
     </BrowserRouter>
+    </Provider>
   )
 }
 

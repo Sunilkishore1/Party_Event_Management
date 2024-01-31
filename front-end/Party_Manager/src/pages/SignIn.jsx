@@ -12,6 +12,7 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useNavigate } from 'react-router-dom';
 
 function Copyright(props) {
   return (
@@ -29,15 +30,16 @@ function Copyright(props) {
 // TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
-
 export default function SignIn() {
+  const navigate=useNavigate()
+  const[mail,setMail]=React.useState("")
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    if(mail.includes("@admin")){
+      navigate("/dashboard");
+    }else{
+      navigate("/")
+    }
   };
 
   return (
@@ -84,6 +86,7 @@ export default function SignIn() {
                 name="email"
                 autoComplete="email"
                 autoFocus
+                onChange={(e)=>setMail(e.target.value)}
               />
               <TextField
                 margin="normal"
@@ -104,6 +107,7 @@ export default function SignIn() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
+                onClick={handleSubmit}
               >
                 Sign In
               </Button>
