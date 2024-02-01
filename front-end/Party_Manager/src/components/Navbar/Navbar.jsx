@@ -6,6 +6,7 @@ import Dropdown from '../Dropdown';
 import React,{useState} from 'react';
 
 function Navbar() {
+    const [log,setLog]=useState(false);
     const[dropdown,setDropdown]=useState(false);
     return ( 
         <>
@@ -30,9 +31,9 @@ function Navbar() {
                         );
                     })}
                 </ul>
-                <div className='navbar-sign'>
-                    <Button/>
-                </div>
+                    <div className='navbar-sign'>
+                        <Button/>
+                    </div>
             </nav>
         </>
     );

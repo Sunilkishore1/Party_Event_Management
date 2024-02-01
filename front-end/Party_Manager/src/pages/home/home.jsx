@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useState} from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import bg1 from '../../assets/background-1.jpg'
 import './home.css';
@@ -8,6 +8,7 @@ import eside from '../../assets/events-side.jpg'
 import Contact from '../../components/Contact/Contact';
 
 const Home = () => {
+  
   return (
     <div>
       <Navbar/> 
