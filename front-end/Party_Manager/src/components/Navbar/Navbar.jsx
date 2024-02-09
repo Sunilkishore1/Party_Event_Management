@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 import { navItems } from '../NavItems';
 import Button from '../Button/Button';
 import Dropdown from '../Dropdown';
-import React,{useState} from 'react';
+import React,{useContext, useState} from 'react';
+import { userContext } from '../context/context';
+import Drop from '../Dropdown/Drop';
+import Drop1 from '../Dropdown/Drop1';
 
 function Navbar() {
-    const [log,setLog]=useState(false);
+    const [log,setLog]=useContext(userContext);
     const[dropdown,setDropdown]=useState(false);
     return ( 
         <>
@@ -32,7 +35,17 @@ function Navbar() {
                     })}
                 </ul>
                     <div className='navbar-sign'>
+                        {
+                            log?
+                            // <p>
+                            //     hi {localStorage.getItem("name").split("@")[0]}
+                            // </p>
+                            <Drop1/>
+
+                        :
+                        
                         <Button/>
+                        }
                     </div>
             </nav>
         </>

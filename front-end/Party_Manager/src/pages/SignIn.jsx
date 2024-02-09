@@ -13,6 +13,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
+import { userContext } from '../components/context/context'; 
 
 function Copyright(props) {
   return (
@@ -31,10 +32,13 @@ function Copyright(props) {
 
 const defaultTheme = createTheme();
 export default function SignIn() {
+  const [log,setLog]=React.useContext(userContext);
   const navigate=useNavigate()
   const[mail,setMail]=React.useState("")
   const handleSubmit = (event) => {
     event.preventDefault();
+    setLog(true);
+    localStorage.setItem("name",mail);
     if(mail.includes("@admin")){
       navigate("/dashboard");
     }else{

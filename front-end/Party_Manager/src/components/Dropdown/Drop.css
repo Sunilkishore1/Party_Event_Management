@@ -1,0 +1,24 @@
+.drop-outter Button{
+    padding: 10px;
+    border-radius: 4cm;
+
+}
+.drop-outter.clicked button{
+    margin-top: 10px;
+}
+.drop-submenu.clicked{
+    display: none;
+}
+.drop-submenu ul{
+    z-index: 5;
+}
+.drop-submenu li{
+    background-color: black;
+    color: aliceblue;
+    list-style: none;
+    z-index: 5;
+    /* padding: 20px; */
+}
+.drop-submenu{
+    margin-top: 30px;
+}

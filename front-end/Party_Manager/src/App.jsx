@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createContext, useState } from 'react'
 import { BrowserRouter,Route,Routes } from 'react-router-dom'
 import Home from './pages/home/home'
 import './App.css'
@@ -13,11 +13,16 @@ import { Provider } from 'react-redux'
 import {store} from './components/Redux/reducer/store'
 import Bookings from './user/Bookings'
 import Dashboard from './components/Admin/Dashboard'
+import { userContext } from './components/context/context'
+import Venue from './pages/Venue/Venue'
 
 
 const App = () => {
+  const[log,setLog]=useState(false);
+
   return (
     <Provider store={store}>
+      <userContext.Provider value={[log,setLog]}>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
@@ -29,9 +34,11 @@ const App = () => {
         <Route path='/booking' element={<Booking/>}></Route>
         <Route path='/bookings' element={<Bookings/>}></Route>
         <Route path='/dashboard' element={<Dashboard/>}></Route>
-
+        <Route path='/booking' element={<Venue/>}></Route>
+        
       </Routes>
     </BrowserRouter>
+    </userContext.Provider> 
     </Provider>
   )
 }
