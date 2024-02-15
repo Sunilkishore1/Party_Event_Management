@@ -34,15 +34,15 @@ public class BookingService {
 
     public Booking updateEvent(Booking event, int id) {
         Booking model = repo.findById(id).get();
-        model.setBid(event.getBid());
+        model.setB_id(event.getB_id());
         model.setLink(event.getLink());
         model.setPeople(event.getPeople());
         model.setTime(event.getTime());
         model.setDate(event.getDate());
         model.setStatus(event.getStatus());
         model.setEventType(event.getEventType());
-        model.setUser(event.getUser());
-        model.setVenue(event.getVenue());
+        // model.setUser(event.getUser());
+        // model.setVenue(event.getVenue());
 
         repo.save(model);
         return model;

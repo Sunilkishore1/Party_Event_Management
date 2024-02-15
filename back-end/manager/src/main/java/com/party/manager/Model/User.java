@@ -36,15 +36,17 @@ public class User implements UserDetails {
     private String username;
     private String email;
     private String password;
+    private long mobile;
 
     // @OneToMany(cascade = CascadeType.ALL)
     // @JoinColumn(name = "uid", referencedColumnName = "user_id")
     // private List<Booking> booking;
 
-    public User(String username, String email, String password) {
+    public User(String username, String email, String password, long mobile) {
         this.username = username;
         this.email = email;
         this.password = password;
+        this.mobile = mobile;
     }
 
     @Enumerated(EnumType.STRING)
@@ -87,5 +89,9 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public long getMobile() {
+        return mobile;
     }
 }

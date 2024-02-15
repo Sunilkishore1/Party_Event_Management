@@ -58,3 +58,18 @@
     justify-content: space-around;
     margin-top:5%;
 }
+
+.booking-book{
+  justify-content: center;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.booking-book button{
+  padding: 20px;
+  color: #fefefe;
+  background-color: rgb(223,51,17);
+  border-radius: 2cm;
+  border: none;
+
+}

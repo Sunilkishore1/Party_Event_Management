@@ -1,0 +1,12 @@
+.event-content{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 300px;
+    display:flex;
+    justify-content: space-between
+}
+.content-containers{
+    margin: 30px;
+    padding: 40px;
+    background-color: rgb(223,51,17);
+}

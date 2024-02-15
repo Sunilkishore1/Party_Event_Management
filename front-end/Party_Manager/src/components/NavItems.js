@@ -20,7 +20,7 @@ export const navItems=[
     {
         id:4,
         title:"VENUES",
-        path:"/booked",
+        path:"/venues",
         cName:"nav-item",
     },
 ]
@@ -29,19 +29,19 @@ export const serviceDropdown=[
     {
         id:1,
         title:"WEDDING EVENTS",
-        path:"/wedding",
+        path:"/services",
         cName:"submenu-item",
     },
     {
         id:2,
         title:"CORPORATE EVENT",
-        path:"/corporate",
+        path:"/services",
         cName:"submenu-item",
     },
     {
         id:1,
         title:"SOCIAL EVENT",
-        path:"/",
+        path:"/services",
         cName:"submenu-item",
     },
 ]

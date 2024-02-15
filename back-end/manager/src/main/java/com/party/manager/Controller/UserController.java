@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.party.manager.dto.response.MessageResponse;
 
-@CrossOrigin(origins = "*", maxAge = 4800)
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/test")
 public class UserController {

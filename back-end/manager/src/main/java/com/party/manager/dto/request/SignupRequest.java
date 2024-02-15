@@ -15,6 +15,8 @@ public class SignupRequest {
 
     private String password;
 
+    private long mobile;
+
     public String getUsername() {
         return username;
     }

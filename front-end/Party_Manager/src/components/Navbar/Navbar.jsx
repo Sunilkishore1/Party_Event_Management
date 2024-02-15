@@ -9,7 +9,6 @@ import Drop from '../Dropdown/Drop';
 import Drop1 from '../Dropdown/Drop1';
 
 function Navbar() {
-    const [log,setLog]=useContext(userContext);
     const[dropdown,setDropdown]=useState(false);
     return ( 
         <>
@@ -36,14 +35,16 @@ function Navbar() {
                 </ul>
                     <div className='navbar-sign'>
                         {
-                            log?
-                            // <p>
-                            //     hi {localStorage.getItem("name").split("@")[0]}
-                            // </p>
-                            <Drop1/>
+                            localStorage.getItem("isLogged")==="true"?
 
+                            <>
+                              {/* <h2>
+                                Hi, {localStorage.getItem("username")}
+                            </h2> */}
+                            <Drop1/>
+                            
+                            </>
                         :
-                        
                         <Button/>
                         }
                     </div>

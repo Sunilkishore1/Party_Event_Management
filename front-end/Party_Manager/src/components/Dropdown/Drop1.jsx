@@ -20,6 +20,7 @@ export default function Drop1() {
   };
   const handleClose3 = () => {
     setAnchorEl(null);
+    localStorage.clear();
     navigate('/signup')
   };
 
@@ -33,7 +34,7 @@ export default function Drop1() {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-        {localStorage.getItem("name")}
+        Hi, {localStorage.getItem("username")}
       </Button>
       <Menu
         id="basic-menu"

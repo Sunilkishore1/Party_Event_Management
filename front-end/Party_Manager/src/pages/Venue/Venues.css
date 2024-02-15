@@ -1,0 +1,78 @@
+/* Container for venues */
+.venues {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Individual venue card */
+.venue {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    height: 20%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+    width: 30%;
+    padding: 30px;
+    font-family: 'Poppins', sans-serif;
+    color: #df3311;
+}
+
+/* Hover effect for venue card */
+.venue:hover {
+    box-shadow: 0 14px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Venue image */
+.venue img {
+    width: 20rem;
+    height: 20rem;
+    margin-left: 10%;
+    filter: contrast(120%);
+    border-radius: 50%; /* Changed from 70% to 50% for a smoother circular shape */
+}
+
+/* Hover effect for venue image */
+.venue img:hover {
+    opacity: 0.9;
+}
+
+/* Venue name */
+#s-name {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Venue price */
+#s-price {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Venue form */
+#s-form {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Venue location */
+#s-location {
+    text-align: center;
+    margin: 50px 0 30px; /* Shorthand margin property */
+}
+
+/* Venue button */
+.venue button {
+    text-decoration: none;
+    background-color: #7575cc;
+    border: 2px solid white;
+    padding: 20px;
+    cursor: pointer;
+    margin-top: 5%;
+    width: 50%; /* Adjusted width for better responsiveness */
+    margin-left: auto; /* Center the button */
+    margin-right: auto; /* Center the button */
+}

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -12,32 +12,53 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import axios from 'axios'
+import { useNavigate } from 'react-router';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+function SignUp() {
+  const defaultTheme = createTheme({
+    typography: {
+      fontFamily: 'Poppins, sans-serif',
+    },
+  });
+  const [status,setStatus]=useState("");
+  // State variables for form inputs
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    mobileno: '',
+    // allowExtraEmails: false // For checkbox
+  });
+  const navigate=useNavigate();
+  const handleChange = (event) => {
+    const { name, value, type, checked } = event.target;
+    const val = type === 'checkbox' ? checked : value;
+    setFormData({
+      ...formData,
+      [name]: val
+    });
+  };
 
-// TODO remove, this demo shouldn't need to reset the theme.
-
-const defaultTheme = createTheme();
-
-export default function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    console.log(formData);
+    axios.post("http://localhost:8080/api/v1/auth/signup",
+    {
+    username: formData.name,
+    email: formData.email,
+    password: formData.password,
+    mobile: formData.mobileno
+    }
+    
+    )
+    .then((r)=>(setStatus(r.status)));
+    if(status===200){
+      localStorage.setItem("isLogged","true")
+      localStorage.setItem("username",formData.name)
+      navigate("/")
+    }
+    // Handle form submission here
   };
 
   return (
@@ -60,25 +81,17 @@ export default function SignUp() {
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12} >
                 <TextField
                   autoComplete="given-name"
-                  name="firstName"
+                  name="name"
                   required
                   fullWidth
-                  id="firstName"
-                  label="First Name"
+                  id="name"
+                  label="Name"
                   autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
+                  value={formData.name}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -89,6 +102,8 @@ export default function SignUp() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  value={formData.email}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -100,14 +115,29 @@ export default function SignUp() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  value={formData.password}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
+                <TextField
+                  required
+                  fullWidth
+                  name="mobileno"
+                  label="Mobile Number"
+                  type="tel"
+                  id="mobileno"
+                  autoComplete="new mobileno"
+                  value={formData.mobileno}
+                  onChange={handleChange}
                 />
               </Grid>
+              {/* <Grid item xs={12}>
+                <FormControlLabel
+                  control={<Checkbox name="allowExtraEmails" color="primary" checked={formData.allowExtraEmails} onChange={handleChange} />}
+                  label="I want to receive inspiration, marketing promotions and updates via email."
+                />
+              </Grid> */}
             </Grid>
             <Button
               type="submit"
@@ -119,15 +149,16 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="/signin" variant="body2">
+                <Link href="/login" variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
   );
 }
+
+export default SignUp;
